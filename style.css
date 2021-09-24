@@ -150,6 +150,7 @@ body {
   }
 }
 .form__title {
+  overflow: hidden;
   font-weight: 700;
   font-size: 32px;
   line-height: 32.19px;
