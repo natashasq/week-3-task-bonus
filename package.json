@@ -1,0 +1,20 @@
+{
+  "name": "week-3-task-bonus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natashasq/week-3-task-bonus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natashasq/week-3-task-bonus/issues"
+  },
+  "homepage": "https://github.com/natashasq/week-3-task-bonus#readme"
+}

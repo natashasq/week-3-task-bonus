@@ -1,0 +1,243 @@
+$dark-grey-color: #1e1f36;
+$medium-grey-color: #4b4c5f;
+$light-grey-color: #787887;
+$background-violet: hsl(273, 75%, 66%);
+$background-blue: hsl(240, 73%, 65%);
+$deviders-blue: hsl(240, 5%, 91%);
+$orange-color: #f47b56;
+
+@mixin tabletScreen {
+  @media screen and (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin desktopScreen {
+  @media screen and (min-width: 1010px) {
+    @content;
+  }
+}
+
+@mixin h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32.19px;
+  color: $dark-grey-color;
+}
+
+@mixin h5-bold {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 13px;
+  color: $dark-grey-color;
+}
+
+@mixin h5 {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 13.08px;
+  color: $medium-grey-color;
+}
+
+@mixin body {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: $light-grey-color;
+}
+
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient($background-violet, $background-blue);
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__container {
+  @include desktopScreen {
+    width: 950px;
+    position: relative;
+    overflow: visible;
+  }
+}
+
+.form {
+  margin: 0 24px;
+  max-width: 330px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  border-radius: 23px;
+  padding: 48px 24px;
+  overflow: visible;
+  display: flex;
+  margin-top: 148px;
+  flex-direction: column;
+  padding: 48px 12px;
+
+  @include tabletScreen {
+    max-width: 600px;
+    padding: 48px 35px;
+  }
+  @include desktopScreen {
+    max-width: 920px;
+    width: 100%;
+    padding: 58px 95px 90px 0;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    overflow: unset;
+    width: 180px;
+    @include desktopScreen {
+      position: unset;
+      width: 430px;
+      height: 359px;
+    }
+  }
+  &__icon {
+    position: absolute;
+    bottom: -20px;
+    @include tabletScreen {
+      left: 115px;
+    }
+    @include desktopScreen {
+      display: none;
+    }
+  }
+  &__icon-desktop {
+    display: none;
+    @include desktopScreen {
+      display: block;
+      margin-left: -80px;
+      margin-top: -580px;
+    }
+  }
+  &__icon-box {
+    display: none;
+    @include desktopScreen {
+      display: block;
+      position: absolute;
+      top: 343px;
+      left: -69px;
+      z-index: 1;
+    }
+  }
+  &__icon-pattern {
+    position: absolute;
+    bottom: -35px;
+    left: 28px;
+    @include tabletScreen {
+      left: 125px;
+    }
+    @include desktopScreen {
+      display: none;
+    }
+  }
+  &__icon-pattern-desktop {
+    display: none;
+    @include desktopScreen {
+      display: block;
+      margin-top: -352px;
+      margin-left: -573px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: unset;
+    justify-content: center;
+    margin-top: 84px;
+    @include desktopScreen {
+      max-width: 350px;
+      margin-top: 0;
+      margin-left: 65px;
+      align-self: baseline;
+    }
+  }
+  &__title {
+    overflow: hidden;
+    @include h1;
+    margin-bottom: 18px;
+    align-self: center;
+    @include desktopScreen {
+      align-self: flex-start;
+    }
+  }
+  &__accordion {
+    outline: none;
+    border-color: transparent;
+    background-color: white;
+    @include h5;
+    border-bottom: solid 1px $deviders-blue;
+    padding: 20px 0 19px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    &:hover {
+      color: $orange-color;
+    }
+    @media screen and (max-width: 360px) {
+      max-width: 230px;
+    }
+    @include desktopScreen {
+      font-size: 14px;
+      line-height: 14px;
+      min-width: 350px;
+    }
+  }
+  &__answer {
+    @include body;
+    border-bottom: solid 1px $deviders-blue;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  &__answer-text {
+    padding-right: 25px;
+    @media screen and (max-width: 360px) {
+      max-width: 220px;
+    }
+    @include tabletScreen {
+    }
+    @include desktopScreen {
+      padding: 4px 0 16px 0;
+      max-width: 300px;
+    }
+  }
+}
+
+.-active {
+  @include h5-bold;
+  color: $medium-grey-color;
+  border-bottom: none;
+  padding: 17px 0 12px;
+  @include desktopScreen {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.-active-arrow {
+  transform: rotate(180deg);
+}
