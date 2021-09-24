@@ -39,11 +39,7 @@ body {
   display: flex;
   margin-top: 148px;
   flex-direction: column;
-}
-@media screen and (max-width: 375px) {
-  .form {
-    padding: 48px 12px;
-  }
+  adding: 48px 12px;
 }
 @media screen and (min-width: 500px) {
   .form {
@@ -184,7 +180,7 @@ body {
 .form__accordion:hover {
   color: #f47b56;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 360px) {
   .form__accordion {
     max-width: 230px;
   }
@@ -209,7 +205,7 @@ body {
 .form__answer-text {
   padding-right: 25px;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 360px) {
   .form__answer-text {
     max-width: 220px;
   }
