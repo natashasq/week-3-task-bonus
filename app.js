@@ -10,18 +10,17 @@ for (let i = 0; i < accordion.length; i++) {
       }
     }
     this.classList.add("-active");
-    this.firstElementChild.classList.add("-active-arrow")
+    this.firstElementChild.classList.add("-active-arrow");
 
     const answer = this.nextElementSibling;
-    const chevron = this.firstElementChild;
+    const arrow = this.firstElementChild;
 
     if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-      accordion[i].classList.remove("-active");
-      chevron.classList.remove("-active-arroow")
+      answer.style.maxHeight = null;1
+      arrow.classList.remove("-active-arrow")
     } else {
       answer.style.maxHeight = answer.scrollHeight + "px";
-      chevron.classList.add("-active-arroow")
+      arrow.classList.add("-active-arrow")
     }
   });
 }
