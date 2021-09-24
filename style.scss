@@ -86,7 +86,7 @@ body {
   display: flex;
   margin-top: 148px;
   flex-direction: column;
-  adding: 48px 12px;
+  padding: 48px 12px;
 
   @include tabletScreen {
     max-width: 600px;
