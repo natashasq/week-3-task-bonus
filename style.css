@@ -177,6 +177,8 @@ body {
   cursor: pointer;
   position: relative;
   transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
 }
 .form__accordion:hover {
   color: #f47b56;
@@ -218,37 +220,7 @@ body {
   }
 }
 
-.chevron::after {
-  content: "";
-  border-top: 2px solid #f47b56;
-  border-right: 2px solid #f47b56;
-  display: inline-block;
-  height: 5px;
-  top: 20px;
-  left: 255px;
-  vertical-align: top;
-  width: 5px;
-  position: absolute;
-  transform: rotate(135deg);
-}
-@media screen and (max-width: 375px) {
-  .chevron::after {
-    left: 217px;
-  }
-}
-@media screen and (min-width: 500px) {
-  .chevron::after {
-    right: 10px;
-    left: auto;
-  }
-}
-@media screen and (min-width: 1010px) {
-  .chevron::after {
-    left: 300px;
-  }
-}
-
-.active {
+.-active {
   font-weight: 700;
   font-size: 13px;
   line-height: 13px;
@@ -258,39 +230,14 @@ body {
   padding: 17px 0 12px;
 }
 @media screen and (min-width: 1010px) {
-  .active {
+  .-active {
     font-size: 14px;
     line-height: 14px;
   }
 }
-.active::after {
-  content: "";
-  border-top: 2px solid #f47b56;
-  border-right: 2px solid #f47b56;
-  display: inline-block;
-  height: 5px;
-  top: 24px;
-  left: 255px;
-  vertical-align: top;
-  width: 5px;
-  position: absolute;
-  transform: rotate(-45deg);
-}
-@media screen and (max-width: 375px) {
-  .active::after {
-    left: 217px;
-  }
-}
-@media screen and (min-width: 500px) {
-  .active::after {
-    right: 10px;
-    left: auto;
-  }
-}
-@media screen and (min-width: 1010px) {
-  .active::after {
-    left: 300px;
-  }
+
+.-active-arrow {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=style.css.map */
