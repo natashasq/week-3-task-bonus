@@ -16,8 +16,9 @@ for (let i = 0; i < accordion.length; i++) {
     const arrow = this.firstElementChild;
 
     if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;1
+      answer.style.maxHeight = null;
       arrow.classList.remove("-active-arrow")
+      this.classList.remove("-active")
     } else {
       answer.style.maxHeight = answer.scrollHeight + "px";
       arrow.classList.add("-active-arrow")
